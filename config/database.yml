@@ -1,0 +1,15 @@
+development:
+  adapter: mysql
+  database: dev_db
+  encoding: utf8
+  username: username
+  password: password
+  host: localhost
+
+production:
+  adapter: mysql
+  database: prod_db
+  encoding: utf8
+  username: username
+  password: password
+  host: localhost 

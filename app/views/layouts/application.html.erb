@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <%= stylesheet_link_tag 'stylesheet', :media => 'all' -%>
+    <link rel="alternate" type="application/rss+xml" title="mvheadlines - All Stories" href="http://localhost/all.xml" />
+    <link rel="alternate" type="application/rss+xml" title="mvheadlines - Main Stories" href="http://localhost/covers.xml" />
+    <link rel="alternate" type="application/rss+xml" title="mvheadlines - Popular Stories" href="http://localhost/popular.xml" />
+    <link rel="alternate" type="application/rss+xml" title="mvheadlines - Local News" href="http://localhost/news.xml" />
+    <link rel="alternate" type="application/rss+xml" title="mvheadlines - Business" href="http://localhost/business.xml" />
+    <link rel="alternate" type="application/rss+xml" title="mvheadlines - Sports" href="http://localhost/sports.xml" />
+    <title>mvheadlines</title>
+  </head>
+  <body class="core">
+  <script language="JavaScript">
+    if (window != top) top.location.href = location.href;
+  </script>
+    <div id="wrapper">
+      <div id="header">
+        <div id="titles">
+          <h1><a href="http://localhost">ރާއްޖޭގެ ހަބަރު</a></h1>
+          <h2>ރާއްޖޭގެ ދުވަހުނޫސްތަކުން އެންމެ ފަހުގެ ސުރުޙީތައް</h2>
+        </div>
+      </div>
+      <div id="content">
+        <%= tabnav :navigation -%>
+        <div id="block">
+          <div id="sidebar">
+            <%= yield :sidebar -%>
+          </div>
+          <%= yield -%>
+        </div>
+      </div>
+      <div id="footer">     
+        <p>މިވެބްސައިޓާއި ބެހޭގޮތުން ސުވާލެއް ނުވަތަ ހިޔާލެއް އޮތްނަމަ <a href="mailto:info@localhost">އީމެއިލް</a> ކުރައްވާށެވެ</p>
+        <p>އާރު.އެސް.އެސް ފީޑުތައް: <a href="http://localhost/all.xml">އެންމެ ފަހުގެ</a> - <a href="http://localhost/covers.xml">މުހިއްމު</a> - <a href="http://localhost/popular.xml">މަގުބޫލް</a> - <a href="http://localhost/news.xml">ރާއްޖެ</a> - <a href="http://localhost/business.xml">ވިޔަފާރި</a> - <a href="http://localhost/sports.xml">ކުޅިވަރު</a></p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+	<div class="news_item">
+		<div class="number">
+		</div>
+		<div class="title">
+		    <%= link_to @post.real_title, {:controller => :posts, :action => :read, :id => @post}, {:target => '_blank', :rel => 'nofollow'} %>
+		    <span class="date"> . <%= @post.site.dhivehi_name %> . <span class="date_n"><%= @post.created_at.to_date %></span></span>
+    </div>
+    <div class="description">
+        <%= simple_format(@post.description) %>
+    </div>
+	</div>

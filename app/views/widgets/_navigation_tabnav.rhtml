@@ -1,0 +1,42 @@
+<% 
+  render_tabnav :navigation, 
+    :html => {:class => 'main_navigation', :id => 'main_navigation'},
+    :generate_css => false do
+
+    add_tab do |t|
+      t.named content_tag(:span, '&nbsp;އެންމެ ފަހުގެ&nbsp;')
+      t.titled 'Latest'
+      t.links_to :controller => 'posts', :action => 'index'
+    end
+
+    add_tab do |t|
+      t.named content_tag(:span, '&nbsp;މުހިއްމު&nbsp;')
+      t.titled 'Cover stories'
+      t.links_to :controller => 'posts', :action => 'cover_stories'
+    end
+
+    add_tab do |t|
+      t.named content_tag(:span, '&nbsp;މަގުބޫލް&nbsp;')
+      t.titled 'Popular stories'
+      t.links_to :controller => 'posts', :action => 'popular'
+    end
+
+    add_tab do |t|
+      t.named content_tag(:span, '&nbsp;ރާއްޖެ&nbsp;')
+      t.titled 'Local news'
+      t.links_to :controller => 'posts', :action => 'news'
+    end
+
+    add_tab do |t|
+      t.named content_tag(:span, '&nbsp;ވިޔަފާރި&nbsp;')
+      t.titled 'Business news'
+      t.links_to :controller => 'posts', :action => 'business'
+    end
+
+    add_tab do |t|
+      t.named content_tag(:span, '&nbsp;ކުޅިވަރު&nbsp;')
+      t.titled 'Sports news'
+      t.links_to :controller => 'posts', :action => 'sports'
+    end
+  end
+%>

@@ -1,0 +1,39 @@
+<% content_for :sidebar do %>	
+  <div class="sidebar_h">ވޭތުވެދިޔަ 24 ގަޑިއިރު</div>
+  <ul>  
+  <% Post.daily_popular.visible.each do |post| %>
+      <li><%= link_to post.title, {:controller => :posts, :action => :read, :id => post}, {:target => '_blank', :rel => 'nofollow'} %></li>
+  <% end  %>
+  </ul>  
+  <div class="sidebar_h">ވޭތުވެދިޔަ 7 ދުވަސް</div>
+  <ul>  
+  <% Post.weekly_popular.visible.each do |post| %>
+      <li><%= link_to post.title, {:controller => :posts, :action => :read, :id => post}, {:target => '_blank', :rel => 'nofollow'} %></li>
+  <% end  %>
+  </ul>
+  <div class="sidebar_h">ވޭތުވެދިޔަ 30 ދުވަސް</div>
+  <ul>  
+  <% Post.monthly_popular.visible.each do |post| %>
+      <li><%= link_to post.title, {:controller => :posts, :action => :read, :id => post}, {:target => '_blank', :rel => 'nofollow'} %></li>
+  <% end  %>
+  </ul>  
+<% end %>
+
+<% @posts.each_with_index do |post, index| %>
+	<div class="news_item">
+		<div class="number">
+		    <% if params[:page].to_i >= 1 %>
+		      <% page_count = (params[:page].to_i - 1) * 100 %>
+		      <%= index + 1 + page_count %>		      
+		    <% else %>
+		      <%= index + 1 %>
+		    <% end %>
+		</div>
+		<div class="title">
+		    <%= link_to post.title, {:controller => :posts, :action => :read, :id => post}, {:target => '_blank', :rel => 'nofollow'} %>
+		    <span class="date"> . <%= post.site.dhivehi_name %> . <span class="date_n"><%= post.created_at.to_date %></span></span>
+		</div>
+	</div>
+<% end %>
+
+<%= will_paginate @posts %>
