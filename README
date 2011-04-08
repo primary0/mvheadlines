@@ -2,18 +2,19 @@ SETUP
 ------
 1. Install dependencies:
      sudo gem install hpricot htmlentities will_paginate
-3. Migrate the database
+2. Migrate the database
      rake db:migrate:reset
-4. Call Site class methods to start crawling
+3. Call Site class methods to start crawling
      script/runner -e development "Site.update_all"
-5. Start server. If you have newer Rails, force start with Webrick
+4. Start server. If you have newer Rails, force start with Webrick
      ./script/server webrick
-6. Try it out in your browser http://localhost:3000
+5. Try it out in your browser http://localhost:3000
 
 NOTES
 -------
 1. Not tested with Phusion Passenger.
 2. Rails 2.1 is frozen in.
+3. Default Site records created during migration.
 
 ------------------------------------------------------			
 mvheadlines.com dhivehi news crawler proof-of-concept
