@@ -2,8 +2,9 @@
 
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
-ENV['RAILS_ENV'] ||= 'production'
-ENV['GEM_PATH'] = '/path/to/user/gems:/path/to/system/gems'
+
+# ENV['RAILS_ENV'] ||= 'production'
+# ENV['GEM_PATH'] = '/path/to/user/gems:/path/to/system/gems'
 
 $KCODE ='u'
 require 'jcode'
@@ -29,10 +30,6 @@ Rails::Initializer.run do |config|
   # config.gem "bj"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "aws-s3", :lib => "aws/s3"
-  
-  config.gem 'hpricot'
-  config.gem 'htmlentities'
-  config.gem 'haml'
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -73,5 +70,3 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   config.active_record.observers = :post_sweeper
 end
-
-Ferret.locale = "en_US.UTF-8"

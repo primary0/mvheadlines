@@ -1,22 +1,20 @@
-SETUP NOTES
-------------
-1. Requires:
-	rubygems
-	hpricot
-	open-uri
-	htmlentities
-	strscan
-	haml
-2. Rails (2.1) is frozen
-3. Configure Hoptoad API key required in initializers/hoptoad.rb
-4. Configure gem path in environment.rb
-5. Not tested with Phusion Passenger
-6. Configure .htaccess for FastCGI deployment
-7. Configure proper address or domain paths on application layout
-8. Call Site class methods to start crawling
-	example:	script/runner -e development "Site.update_all"
-			
-			
+SETUP
+------
+1. Install dependencies:
+     sudo gem install hpricot htmlentities will_paginate
+3. Migrate the database
+     rake db:migrate:reset
+4. Call Site class methods to start crawling
+     script/runner -e development "Site.update_all"
+5. Start server. If you have newer Rails, force start with Webrick
+     ./script/server webrick
+6. Try it out in your browser http://localhost:3000
+
+NOTES
+-------
+1. Not tested with Phusion Passenger.
+2. Rails 2.1 is frozen in.
+
 ------------------------------------------------------			
 mvheadlines.com dhivehi news crawler proof-of-concept
 Written by Mohamed Ashraf. No rights reserved. 2008	

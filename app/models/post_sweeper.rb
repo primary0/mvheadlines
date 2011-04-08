@@ -2,21 +2,18 @@ class PostSweeper < ActionController::Caching::Sweeper
   
   observe Post
   
-  def after_create(post)
-    
+  def after_create(post)    
     FileUtils.rm_rf File.expand_path("public/index.html", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/popular.html", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/covers.html", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/news.html", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/business.html", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/sports.html", RAILS_ROOT)
-    
     FileUtils.rm_rf File.expand_path("public/popular/", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/covers/", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/news/", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/business/", RAILS_ROOT)
-    FileUtils.rm_rf File.expand_path("public/sports/", RAILS_ROOT)
-    
+    FileUtils.rm_rf File.expand_path("public/sports/", RAILS_ROOT)    
     FileUtils.rm_rf File.expand_path("public/1.html", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/2.html", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/3.html", RAILS_ROOT)
@@ -46,15 +43,6 @@ class PostSweeper < ActionController::Caching::Sweeper
     FileUtils.rm_rf File.expand_path("public/27.html", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/28.html", RAILS_ROOT)
     FileUtils.rm_rf File.expand_path("public/29.html", RAILS_ROOT)
-    FileUtils.rm_rf File.expand_path("public/30.html", RAILS_ROOT)
-    
-    FileUtils.rm_rf File.expand_path("public/all.xml", RAILS_ROOT)
-    FileUtils.rm_rf File.expand_path("public/covers.xml", RAILS_ROOT)
-    FileUtils.rm_rf File.expand_path("public/popular.xml", RAILS_ROOT)
-    FileUtils.rm_rf File.expand_path("public/news.xml", RAILS_ROOT)
-    FileUtils.rm_rf File.expand_path("public/business.xml", RAILS_ROOT)
-    FileUtils.rm_rf File.expand_path("public/sports.xml", RAILS_ROOT)
-    FileUtils.rm_rf File.expand_path("public/posts.xml", RAILS_ROOT)    
-    
+    FileUtils.rm_rf File.expand_path("public/30.html", RAILS_ROOT)        
   end
 end

@@ -26,6 +26,9 @@ class Post < ActiveRecord::Base
   named_scope :weekly_popular, :conditions => ['created_at > ?', 7.days.ago ], :order => 'number_of_votes DESC', :limit => 10
   named_scope :daily_popular, :conditions => ['created_at > ?', 24.hours.ago ], :order => 'number_of_votes DESC', :limit => 10
   named_scope :monthly_popular, :conditions => ['created_at > ?', 30.days.ago ], :order => 'number_of_votes DESC', :limit => 10    
+  
+  #cattr_reader :per_page
+  #@@per_page = 1  
 
   def url_exists?
     Post.find_by_url(url) ? true : false
