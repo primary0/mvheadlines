@@ -1,0 +1,30 @@
+h1(#header). mvheadlines
+
+Thaana news headlines crawler running on Ruby on Rails.
+Originally deployed in mvheadlines.com
+
+h2. Setup
+
+Install dependencies:
+@sudo gem install hpricot htmlentities@
+
+Migrate the database:
+@rake db:migrate:reset@
+
+Call Site class methods to start crawling:
+@script/runner -e development "Site.update_all"@
+
+Start the server. If you have newer Rails, force start with Webrick:
+@./script/server webrick@
+
+Try it out in your browser:
+"http://localhost:3000":http://localhost:3000
+
+h2. Important Notes
+
+* Default Site data populated during migration.
+* Rails 2.1 is frozen in.
+
+
+mvheadlines.com Thaana news crawler proof-of-concept
+Written by Mohamed Ashraf. No rights reserved. 2008
