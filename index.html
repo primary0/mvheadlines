@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Mvheadlines by primary0</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Mvheadlines</h1>
+        <p>Thaana news crawler proof-of-concept with Ruby on Rails.</p>
+
+        <p class="view"><a href="https://github.com/primary0/mvheadlines">View the Project on GitHub <small>primary0/mvheadlines</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/primary0/mvheadlines/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/primary0/mvheadlines/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/primary0/mvheadlines">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>Thaana news headlines crawler running on Ruby on Rails.
+Originally deployed in mvheadlines.com</p>
+
+<h2>Setup</h2>
+
+<h3>Install dependencies</h3>
+
+<p>sudo gem install hpricot htmlentities</p>
+
+<h3>Migrate the database</h3>
+
+<p>rake db:migrate:reset</p>
+
+<h3>Call Site class methods to start crawling</h3>
+
+<p>script/runner -e development "Site.update_all"</p>
+
+<h3>Start the server. If you have newer Rails, force start with Webrick</h3>
+
+<p>./script/server webrick</p>
+
+<h3>Try it out in your browser</h3>
+
+<p>http://localhost:3000</p>
+
+<h2>Important Notes</h2>
+
+<ul>
+<li>Default Site data populated during migration.</li>
+<li>Rails 2.1 is frozen in.</li>
+</ul><p>mvheadlines.com Thaana news crawler proof-of-concept
+Written by Mohamed Ashraf. No rights reserved. 2008</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/primary0">primary0</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
